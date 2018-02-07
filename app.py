@@ -50,10 +50,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    res = requests.get('http://tw.myrenta.com/search?bcg=a&t=' + event.message.text)
+    #res = requests.get('http://tw.myrenta.com/search?bcg=a&t=' + event.message.text)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=res.text))
+		TextSendMessage(text=event.message.text))
+        #TextSendMessage(text=res.text))
 
 
 if __name__ == "__main__":
