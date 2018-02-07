@@ -50,11 +50,14 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    #res = requests.get('http://tw.myrenta.com/search?bcg=a&t=' + event.message.text)
-	if event.message.text='id':
-		line_bot_api.reply_message(	event.reply_token, TextSendMessage(text='黑:'+event.message.text))
-        #TextSendMessage(text=res.text))
-	else	
-		line_bot_api.reply_message( event.reply_token, TextSendMessage(text='白:'+event.message.text))
+	if event.message.text='id':    
+		res = requests.get('http://tw.myrenta.com/search?bcg=a&t=' + event.message.text)
+	else
+		res = '黑:' + event.message.text
+    line_bot_api.reply_message(	event.reply_token,
+		#TextSendMessage(text='黑:'+event.message.text))
+		TextSendMessage(text=res.text))
+		
+
 if __name__ == "__main__":
     app.run()
