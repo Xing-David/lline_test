@@ -50,7 +50,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    res = requests.get('https://www.google.com.tw/search?q=' + event.message.text)
+    res = requests.get('http://tw.myrenta.com/search?bcg=a&t=' + event.message.text)
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=res.text))

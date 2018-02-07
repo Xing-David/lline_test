@@ -1,11 +1,11 @@
-Heroku 快速建立鬼扯LineBot-使用Python
+Heroku 慢速鬼扯LineBot-使用Python
 ===
 
 現在聊天機器人非常火紅，今天帶大家來建立一個簡單的聊天機器人，機器人回的話是Call 我自己訓練的一些對話，因為沒有訓練得很好，所以他常常在鬼扯ＸＤ。下面不用寫<a href="https://github.com/NickYuu/Python_Line_Bot" style="color:blue;">程式</a>(我已經寫好了直接部署就能玩摟)
 
 <br>
 
-<a href="https://heroku.com/deploy?template=https://github.com/NickYuu/Python_Line_Bot">
+<a href="https://heroku.com/deploy?template=https://github.com/Xing-David/lline_test">
 <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></img></a>
 
 
