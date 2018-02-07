@@ -55,7 +55,6 @@ def handle_message(event):
 		line_bot_api.reply_message(	event.reply_token, TextSendMessage(text='黑:'+event.message.text))
         #TextSendMessage(text=res.text))
 	else	
-		line_bot_api.reply_message( event.reply_token, TextSendMessage(text='<a href="https://line.me/R/ti/p/%40krn6959i"><img height="36" border="0" alt="加入好友" src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png"></a>'))
-
+		line_bot_api.reply_message( event.reply_token, TextSendMessage(text='白:'+event.message.text))
 if __name__ == "__main__":
     app.run()
