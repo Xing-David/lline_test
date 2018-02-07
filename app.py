@@ -54,7 +54,7 @@ def handle_message(event):
 	#	res = requests.get('http://tw.myrenta.com/search?bcg=a&t=' + event.message.text)
 	#else
 		#res = '黑:' + event.message.text
-	res = '白:'
+	#res = '白:'
     line_bot_api.reply_message(	event.reply_token,
 		#TextSendMessage(text=res.text))
 		TextSendMessage(text='白 : '+event.message.text))
