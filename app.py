@@ -57,17 +57,17 @@ def handle_message(event):
 	#res = "白:"
     line_bot_api.reply_message(	event.reply_token,
 		#TextSendMessage(text=res.text))
-		 TextSendMessage(text=sum()+'灰 : '+event.message.text))
+		 TextSendMessage(text=sum(event.message.text)+'灰 : '+event.message.text))
 
 if __name__ == "__main__":
 	app.run()
 
 
-def sum():
+def sum(tex ):
 	i = 1
 	sum = 0
 	while i <= 100:
 		sum += i
 		i += 1
-	sum = '白白的'	
+	sum = '白白的'+tex+'go'	
 	return sum
