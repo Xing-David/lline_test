@@ -57,7 +57,7 @@ def handle_message(event):
 	#res = "白:"
     line_bot_api.reply_message(	event.reply_token,
 		#TextSendMessage(text=res.text))
-		TextSendMessage(text='灰 : '+event.message.text+sum()))
+		TextSendMessage(text=sum()+'灰 : '+event.message.text))
 
 if __name__ == "__main__":
 	app.run()
