@@ -60,4 +60,13 @@ def handle_message(event):
 		TextSendMessage(text='灰 : '+event.message.text))
 
 if __name__ == "__main__":
-    app.run()
+	app.run()
+
+
+def sum():
+	i = 1
+	sum = 0
+	while i <= 100:
+		sum += i
+		i += 1
+	return sum
