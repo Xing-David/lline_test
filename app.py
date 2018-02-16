@@ -69,5 +69,5 @@ def sum(tex ):
 	while i <= 100:
 		sum += i
 		i += 1
-	sun = str(sum) + '白白的'+tex+'go'	
+	sun = str(sum) + '白白的\n'+tex+'go<BR>'+'\uDBC0\uDC84 LINE emoji'	+'\t1231223'
 	return sun
