@@ -69,5 +69,5 @@ def sum(tex ):
 	while i <= 100:
 		sum += i
 		i += 1
-	sum = sum + '白白的'+tex+'go'	
+	sum = Str(sum) + '白白的'+tex+'go'	
 	return sum
