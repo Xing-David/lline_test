@@ -50,15 +50,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-	#if event.message.text='id':    
-	#	res = requests.get('http://tw.myrenta.com/search?bcg=a&t=' + event.message.text)
-	#else
-		#res = '黑:' + event.message.text
-	#res = "白:"
-    line_bot_api.reply_message(	event.reply_token,
-		#TextSendMessage(text=res.text))
-		 TextSendMessage(text=sum(event.message.text)+'灰 : '+event.message.text))
 
+    line_bot_api.reply_message(	event.reply_token,
+
+		 TextSendMessage(text=sum(event.message.text)+'灰 : '+event.message.text))
+		#TextSendMessage(text=res.text))
 if __name__ == "__main__":
 	app.run()
 
@@ -75,4 +71,8 @@ def sum(tex ):
 		sun = '設定模式:\n1.主題\n2.外框\n3.內裡'
 	elif (tex.find('輔助'))!=-1:
 		sun = '輔助模式:\n1.補血\n2.撐防\n3.加速'
+	elif (tex.find('廣發'))!=-1:	
+		line_bot_api.push_message('<to>', TextSendMessage(text='廣發Hello World!'))	
+	else:
+			sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	return sun
