@@ -71,8 +71,8 @@ def sum(tex ):
 		i += 1
 	sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	
-	if (tex.find('設定'))>0:
+	if (tex.find('設定'))!=-1:
 		sun = '設定模式:\n1.主題\n2.外框\n3.內裡'
-	elif (tex.find('輔助'))>0:
+	elif (tex.find('輔助'))!=-1:
 		sun = '輔助模式:\n1.補血\n2.撐防\n3.加速'
 	return sun
