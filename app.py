@@ -53,7 +53,7 @@ def handle_message(event):
 
     line_bot_api.reply_message(	event.reply_token,
 
-		 TextSendMessage(text=sum(event.message.text)+'灰 : '+event.message.text))
+		 TextSendMessage(text=sum(event.message.text)+'\n灰 : '+event.message.text))
 		#TextSendMessage(text=res.text))
 if __name__ == "__main__":
 	app.run()
@@ -72,7 +72,7 @@ def sum(tex ):
 	elif (tex.find('輔助'))!=-1:
 		sun = '輔助模式:\n1.補血\n2.撐防\n3.加速'
 	elif (tex.find('廣發'))!=-1:	
-		line_bot_api.push_message('<to>', TextSendMessage(text='廣發Hello World!'))	
+		line_bot_api.push_message('liangjming', TextSendMessage(text='廣發Hello World!'))	
 	else:
 			sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	return sun
