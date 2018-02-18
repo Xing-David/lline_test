@@ -70,4 +70,11 @@ def sum(tex ):
 		sum += i
 		i += 1
 	sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
+	
+	if(tex == '1'){
+		sun = '設定'
+	}else if(tex == '2'){
+		sun = '執行\n1. go \n return'
+	}
+	
 	return sun
