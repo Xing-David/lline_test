@@ -26,6 +26,8 @@ app = Flask(__name__)
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
 SECRET = os.environ.get('SECRET')
 
+parser = linebot.WebhookParser('ACCESS_TOKEN')
+
 line_bot_api = LineBotApi(ACCESS_TOKEN)
 handler = WebhookHandler(SECRET)
 
@@ -72,7 +74,9 @@ def sum(tex ):
 	elif (tex.find('輔助'))!=-1:
 		sun = '輔助模式:\n1.補血\n2.撐防\n3.加速'
 	elif (tex.find('廣發'))!=-1:	
-		sun = str(event.source.user_id) 
+		events = parser.parse(body, signature)
+		for eventx in events:
+			sun = sun + '\n' +str(eventx) 
 	else:
 		sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	return sun
