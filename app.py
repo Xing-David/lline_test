@@ -73,8 +73,8 @@ def sum(tex ):
 		sun = '輔助模式:\n1.補血\n2.撐防\n3.加速'
 	elif (tex.find('廣發'))!=-1:	
 		profile = line_bot_api.get_profile(event.source.user_id)
-		sun ='Display name: ' + profile.display_name
-				
+		sun ='Display name: ' + str(profile.display_name) 
+		sun = sun + '\n' + str(event.source.user_id)
 	else:
 		sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	return sun
