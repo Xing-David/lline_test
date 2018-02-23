@@ -53,10 +53,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-
     line_bot_api.reply_message(	event.reply_token,
-		 TextSendMessage(text=sum(event.message.text)+'\n接收 : '+forShow(event.message.text) ))
-		#TextSendMessage(text=res.text))
+		 TextSendMessage(text=sum(event.message.text)+'\n接收 : '+forShow(event) ))
+
 if __name__ == "__main__":
 	app.run()
 
@@ -79,5 +78,5 @@ def sum(tex ):
 		sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	return sun
 def forShow(tex ):	
-	shoow = 'gogo'
+	shoow = str(tex.message.text)+'gogo' 
 	return shoow
