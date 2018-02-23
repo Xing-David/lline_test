@@ -80,9 +80,9 @@ def sum(tex ):
 		sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	return sun
 def forShow(tex ):	
-	sum = ''
-	for x in tex:
-		sum = sum + +' - 'str( x)
+	sum = '111'
+	# for x in tex:
+		# sum = sum + +' - 'str( x)
 	return sun
 
 
