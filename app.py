@@ -55,7 +55,7 @@ def callback():
 def handle_message(event):
 
     line_bot_api.reply_message(	event.reply_token,
-		TextSendMessage(text=sum(event.message.text)+'\n接收 : '+event.message.text + str(event.source.type)))
+		TextSendMessage(text=sum(event.message.text)+'\n接收 : '+event.message.text + str(event.source.userId)))
 		#TextSendMessage(text=res.text))
 if __name__ == "__main__":
 	app.run()
