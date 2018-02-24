@@ -75,7 +75,7 @@ def sum(tex ):
 	elif (tex.find('廣發'))!=-1:	
 		sun = '廣發模式:\n1.test1\n2.test2\n3.test3'
 	else:
-		sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
+		sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84~~~~~~~~~~~~~\n~~~~~~~~'
 	return sun
 def forShow(tex ):	
 	shoow = str(tex.message.text)+'gogo' 
