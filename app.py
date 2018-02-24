@@ -74,5 +74,5 @@ def sum(tex ):
 		sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84~~~~~~~~~~~~~\n~~~~~~~~'
 	return sun
 def forShow(tex ):	
-	shoow = str(tex.message.text)+'gogo' 
+	shoow = str(tex.message.text) + 'gogo' 
 	return shoow
