@@ -26,12 +26,8 @@ app = Flask(__name__)
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
 SECRET = os.environ.get('SECRET')
 
-# parser = linebot.WebhookParser('ACCESS_TOKEN')
-# events = parser.parse(body, signature)
-
 line_bot_api = LineBotApi(ACCESS_TOKEN)
 handler = WebhookHandler(SECRET)
-
 
 @app.route("/callback", methods=['POST'])
 def callback():
