@@ -21,7 +21,7 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-showlog = "Hello" 
+showlog = 'Hello' 
 
 app = Flask(__name__)
 
