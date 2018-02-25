@@ -21,6 +21,8 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+showlog = "Hello" 
+
 app = Flask(__name__)
 
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
@@ -69,11 +71,20 @@ def sum(tex ):
 		sun = '\ntype : '+str( tex.type)
 	elif (tex.find('3'))!=-1:	
 		sun = '\ntimestamp : ' +str( tex.timestamp)
+	elif (tex.find('4'))!=-1:	
+		sun = '\nsource_userId : ' + str( tex.source.userId)	
+	elif (tex.find('5'))!=-1:	
+		sun = '\nOK'
+	elif (tex.find('6'))!=-1:	
+		sun = showlog
+	elif (tex.find('7'))!=-1:	
+		sun = '\nOK'		
 	else:
 		sun = str(sum/50) + '太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
+		showlog = sun + 'CC'
 	return sun
 
 def forShow(tex ):	
 	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type) 	
-#	shoow = shoow + '\nsource_type : ' + str( tex.source.type) #+ '\nsource_userId : ' + str( tex.source.userId)
+	shoow = shoow + '\nsource_type : ' + str( tex.source.type)  
 	return shoow
