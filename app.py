@@ -63,12 +63,12 @@ def sum(tex ):
 		sum += i
 		i += 1
 	
-	if (tex.find('設定'))!=-1:
-		sun = '設定模式:\n1.主題\n2.外框\n3.內裡'
-	elif (tex.find('輔助'))!=-1:
-		sun = '輔助模式:\n1.補血\n2.撐防\n3.加速'
-	elif (tex.find('廣發'))!=-1:	
-		sun = '廣發模式:\n1.test1\n2.test2\n3.test3'
+	if (tex.find('1'))!=-1:
+		sun = '\nreplyToken : ' + str( tex.replyToken)
+	elif (tex.find('2'))!=-1:
+		sun = '\ntype : '+str( tex.type)
+	elif (tex.find('3'))!=-1:	
+		sun = '\ntimestamp : ' +str( tex.timestamp)
 	else:
 		sun = str(sum/50) + '太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	return sun
@@ -76,5 +76,4 @@ def sum(tex ):
 def forShow(tex ):	
 	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type) 	
 #	shoow = shoow + '\nsource_type : ' + str( tex.source.type) #+ '\nsource_userId : ' + str( tex.source.userId)
-	shoow =  '\nreplyToken : ' + str( tex.replyToken)+'\ntype : '+str( tex.type) + '\ntimestamp : ' +str( tex.timestamp) 	
 	return shoow
