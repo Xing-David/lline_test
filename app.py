@@ -75,5 +75,5 @@ def sum(tex ):
 	return sun
 	
 def forShow(tex ):	
-	shoow = str( tex.replyToken) + 'gogo' 
+	shoow = '\nid : 'str( tex.message.id) + '\ntype : 'str( tex.message.type)  + '\ntext : 'str( tex.message.text)
 	return shoow
