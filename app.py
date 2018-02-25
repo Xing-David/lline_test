@@ -72,8 +72,8 @@ def sum(tex ):
 	else:
 		sun = str(sum/50) + '太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	return sun
-# 
+
 def forShow(tex ):	
-	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type) 	
-	shoow = shoow + '\nsource_type : ' + str( tex.source.type) + '\nsource_userId : ' + str( tex.source.userId)
+#	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type) 	
+	shoow = '\nsource_type : ' + str( tex.source.type) #+ '\nsource_userId : ' + str( tex.source.userId)
 	return shoow
