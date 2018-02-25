@@ -73,7 +73,7 @@ def sum(tex ):
 	else:
 		sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84~~~~~~~~~~~~~\n~~~~~~~~'
 	return sun
-# '\nid : 'str( tex.message.id) + '\ntype : 'str( tex.message.type)  +	
+# 
 def forShow(tex ):	
-	shoow =  '\ntext : 'str( tex.message.text)
+	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type)  +	
 	return shoow
