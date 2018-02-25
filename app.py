@@ -74,6 +74,6 @@ def sum(tex ):
 	return sun
 
 def forShow(tex ):	
-#	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type) 	
-	shoow = '\nsource_type : ' + str( tex.source.type) #+ '\nsource_userId : ' + str( tex.source.userId)
+	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type) 	
+	shoow = shoow + '\nsource_type : ' + str( tex.source.type) + '\nsource_userId : ' #+ str( tex.source.userId)
 	return shoow
