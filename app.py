@@ -62,7 +62,6 @@ def sum(tex ):
 	while i <= 100:
 		sum += i
 		i += 1
-	# sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	
 	if (tex.find('設定'))!=-1:
 		sun = '設定模式:\n1.主題\n2.外框\n3.內裡'
@@ -71,9 +70,10 @@ def sum(tex ):
 	elif (tex.find('廣發'))!=-1:	
 		sun = '廣發模式:\n1.test1\n2.test2\n3.test3'
 	else:
-		sun = str(sum/50) + '白\n'+tex+'go  LINE emoji 太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84~~~~~~~~~~~~~\n~~~~~~~~'
+		sun = str(sum/50) + '太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 	return sun
 # 
 def forShow(tex ):	
 	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type) 	
+	shoow = shoow + '\nsource_type : ' + str( tex.source.type) + '\nsource_userId : ' + str( tex.source.userId)
 	return shoow
