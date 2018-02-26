@@ -59,7 +59,7 @@ def handle_message(event):
 		line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))
 	elif event.message.text == "14":
 		line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))		
-	# elif event.message.text == "15":
+	elif event.message.text == "15":
 		
 if __name__ == "__main__":
 	app.run()
@@ -69,3 +69,22 @@ def forShow(tex ):
 	shoow = shoow + '\nsource_type : ' + str( tex.source.type)  
 	return shoow
 	
+#電影
+def movie():
+    target_url = 'https://movies.yahoo.com.tw/'
+    print('Start parsing movie ...')
+    rs = requests.session()
+    res = rs.get(target_url, verify=False)
+    res.encoding = 'utf-8'
+    soup = BeautifulSoup(res.text, 'html.parser')   
+    content = ""
+    for index, data in enumerate(soup.select('div.movielist_info h1 a')):
+        if index == 20:
+            return content
+        print("data：")
+        print(index)
+        print(data)        
+        title = data.text
+        link =  data['href']
+        content += '{}\n{}\n'.format(title, link)
+    return content	
