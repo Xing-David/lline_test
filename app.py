@@ -20,9 +20,18 @@ from linebot.exceptions import (
 # from linebot.models import (
     # MessageEvent, TextMessage, TextSendMessage,
 # )
+#add --
 from linebot.models import *
+import requests 
+from bs4 import BeautifulSoup
+from urllib.request import urlretrieve
+import random
 
-showlog = 'Hello' 
+
+import sys
+import datetime
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials as SAC
 
 app = Flask(__name__)
 
@@ -61,33 +70,8 @@ def handle_message(event):
 	elif event.message.text == "14":
 		line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))		
 	elif event.message.text == "15":
-        buttons_template = TemplateSendMessage(
-			alt_text='目錄 template',
-			template=ButtonsTemplate(
-				title='Template-樣板介紹',
-				text='Template分為四種，也就是以下四種：',
-				thumbnail_image_url='圖片網址',
-				actions=[
-					MessageTemplateAction(
-						label='Buttons Template',
-						text='Buttons Template'
-					),
-					MessageTemplateAction(
-						label='Confirm template',
-						text='Confirm template'
-					),
-					MessageTemplateAction(
-						label='Carousel template',
-						text='Carousel template'
-					),
-					MessageTemplateAction(
-						label='Image Carousel',
-						text='Image Carousel'
-					)
-				]
-			)
-		)
-        line_bot_api.reply_message(event.reply_token, buttons_template)   	
+		a=movie()
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text=a))  	
 		
 if __name__ == "__main__":
 	app.run()
@@ -99,3 +83,24 @@ def forShow(tex ):
 	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type) 	
 	shoow = shoow + '\nsource_type : ' + str( tex.source.type)  
 	return shoow
+	
+	
+#電影
+def movie():
+    target_url = 'https://movies.yahoo.com.tw/'
+    print('Start parsing movie ...')
+    rs = requests.session()
+    res = rs.get(target_url, verify=False)
+    res.encoding = 'utf-8'
+    soup = BeautifulSoup(res.text, 'html.parser')   
+    content = ""
+    for index, data in enumerate(soup.select('div.movielist_info h1 a')):
+        if index == 20:
+            return content
+        print("data：")
+        print(index)
+        print(data)        
+        title = data.text
+        link =  data['href']
+        content += '{}\n{}\n'.format(title, link)
+    return content	
