@@ -22,13 +22,7 @@ from linebot.exceptions import (
 # )
 from linebot.models import *
 
-from bs4 import BeautifulSoup
-from urllib.request import urlretrieve
-import random
-import sys
-import datetime
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials as SAC
+
 
 app = Flask(__name__)
 
