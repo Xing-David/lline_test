@@ -61,26 +61,33 @@ def handle_message(event):
 	elif event.message.text == "14":
 		line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))		
 	elif event.message.text == "15":
-        imagemap_message = ImagemapSendMessage(
-                        base_url='',
-                        alt_text='this is an imagemap',
-                        base_size=BaseSize(height=520, width=520),
-                        actions=[
-                            URIImagemapAction(
-                                link_uri='',
-                                area=ImagemapArea(
-                                    x=174, y=65, width=707, height=416
-                                )
-                            ),
-                            MessageImagemapAction(
-                                text='hello',
-                                area=ImagemapArea(
-                                    x=520, y=0, width=520, height=520
-                                )
-                            )
-                        ]
-                    )
-        line_bot_api.reply_message(event.reply_token,imagemap_message)   	
+        buttons_template = TemplateSendMessage(
+			alt_text='目錄 template',
+			template=ButtonsTemplate(
+				title='Template-樣板介紹',
+				text='Template分為四種，也就是以下四種：',
+				thumbnail_image_url='圖片網址',
+				actions=[
+					MessageTemplateAction(
+						label='Buttons Template',
+						text='Buttons Template'
+					),
+					MessageTemplateAction(
+						label='Confirm template',
+						text='Confirm template'
+					),
+					MessageTemplateAction(
+						label='Carousel template',
+						text='Carousel template'
+					),
+					MessageTemplateAction(
+						label='Image Carousel',
+						text='Image Carousel'
+					)
+				]
+			)
+		)
+        line_bot_api.reply_message(event.reply_token, buttons_template)   	
 		
 if __name__ == "__main__":
 	app.run()
