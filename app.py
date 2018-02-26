@@ -79,9 +79,9 @@ def sum(tex ):
 		sun = showlog
 	elif (tex.find('1'))!=-1:	
 		line_bot_api.reply_message(event.reply_token,StickerSendMessage(package_id=1, sticker_id=2))
-	elif (tex.find('1'))!=-1:	
+	elif (tex.find('2'))!=-1:	
 		line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://ithelp.ithome.com.tw/upload/images/20171231/2010714402Vx4s5hOW.png', preview_image_url='https://ithelp.ithome.com.tw/upload/images/20171231/2010714402Vx4s5hOW.png'))
-	elif (tex.find('1'))!=-1:
+	elif (tex.find('3'))!=-1:
 		 line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))		
 	else:
 		sun = str(sum/50) + '太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
