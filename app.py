@@ -69,7 +69,7 @@ def forShow(tex ):
 	shoow = shoow + '\nsource_type : ' + str( tex.source.type)  
 	return shoow
 	
-#電影
+#電影 
 def movie():
     target_url = 'https://movies.yahoo.com.tw/'
     print('Start parsing movie ...')
