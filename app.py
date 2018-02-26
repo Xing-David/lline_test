@@ -66,7 +66,7 @@ def handle_message(event):
 		print("data：")
 		line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))		
 	elif event.message.text == "15":		
-		line_bot_api.reply_message(event.reply_token,TextSendMessage(text=apple_news()))	
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text=apple_news2()))	
 		
 if __name__ == "__main__":
 	app.run()
@@ -76,24 +76,19 @@ def forShow(tex ):
 	shoow = shoow + '\nsource_type : ' + str( tex.source.type)  
 	return shoow
 #新聞
-def apple_news():
+def apple_news2():
     target_url = 'https://tw.appledaily.com/new/realtime'
-    print('Start parsing movie ...')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     res.encoding = 'utf-8'
     soup = BeautifulSoup(res.text, 'html.parser')   
-    content = []
+    content = ""
     for index, data in enumerate(soup.select('div.item a')):
-        if index == 20:           
+        if index ==10:           
             return content
-    
+        print(data)  
         title = data.find('img')['alt']
         link =  data['href']
         link2 = 'https:'+ data.find('img')['data-src']
-        content.append(title)
-        content.append(link)
-        content.append(link2)
-        print("data：")
-        print(content)   
-    return soup
+        content+='{}\n{}\n{}\n'.format(title,link,link2)
+    return content
