@@ -28,6 +28,9 @@ from linebot.exceptions import (
 from linebot.models import *
 
 
+from bs4 import BeautifulSoup
+from urllib.request import urlretrieve
+
 
 app = Flask(__name__)
 
