@@ -62,27 +62,7 @@ def handle_message(event):
 		line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))		
 	elif event.message.text == "15":
         line_bot_api.reply_message(event.reply_token,LocationSendMessage(title='my location', address='Tainan', latitude=22.994821, longitude=120.196452))
-    elif event.message.text == "16":
-        imagemap_message = ImagemapSendMessage(
-                        base_url='',
-                        alt_text='this is an imagemap',
-                        base_size=BaseSize(height=520, width=520),
-                        actions=[
-                            URIImagemapAction(
-                                link_uri='',
-                                area=ImagemapArea(
-                                    x=174, y=65, width=707, height=416
-                                )
-                            ),
-                            MessageImagemapAction(
-                                text='hello',
-                                area=ImagemapArea(
-                                    x=520, y=0, width=520, height=520
-                                )
-                            )
-                        ]
-                    )
-        line_bot_api.reply_message(event.reply_token,imagemap_message)    	
+     	
 		
 if __name__ == "__main__":
 	app.run()
