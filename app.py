@@ -21,12 +21,10 @@ from linebot.exceptions import (
     # MessageEvent, TextMessage, TextSendMessage,
 # )
 from linebot.models import *
-import requests 
+
 from bs4 import BeautifulSoup
 from urllib.request import urlretrieve
 import random
-
-
 import sys
 import datetime
 import gspread
