@@ -12,7 +12,7 @@ import requests
 
 import sys
 import datetime
-import gspread
+
 
 from flask import Flask, request, abort
 
@@ -27,8 +27,6 @@ from linebot.exceptions import (
 # )
 from linebot.models import *
 
-
-from oauth2client.service_account import ServiceAccountCredentials as SAC
 
 
 app = Flask(__name__)
