@@ -72,30 +72,25 @@ def handle_message(event):
 	elif event.message.text == "16":# 	
 		line_bot_api.reply_message(event.reply_token,LocationSendMessage(title='my location', address='Tainan', latitude=22.994821, longitude=120.196452))		
 	elif event.message.text == "17":#
-		buttons_template = TemplateSendMessage(
-			alt_text='Buttons Template',
-			template=ButtonsTemplate(
-				title='這是ButtonsTemplate',
-				text='ButtonsTemplate可以傳送text,uri',
-				thumbnail_image_url='https://ithelp.ithome.com.tw/upload/images/20180103/20107144FaRLS2uNCS.jpg',
-				actions=[
-					MessageTemplateAction(
-						label='ButtonsTemplate',
-						text='ButtonsTemplate'
-					),
-					URITemplateAction(
-						label='VIDEO1',
-						uri='https://ithelp.ithome.com.tw/articles/10195640'
-					),
-					PostbackTemplateAction(
-						label='postback',
-						text='postback text',
-						data='postback1'
-					)
-				]
-			)
-		)
-    line_bot_api.reply_message(event.reply_token, buttons_template)		
+        Confirm_template = TemplateSendMessage(
+        alt_text='目錄 template',
+        template=ConfirmTemplate(
+            title='這是ConfirmTemplate',
+            text='這就是ConfirmTemplate,用於兩種按鈕選擇',
+            actions=[                              
+                PostbackTemplateAction(
+                    label='Y',
+                    text='Y',
+                    data='action=buy&itemid=1'
+                ),
+                MessageTemplateAction(
+                    label='N',
+                    text='N'
+                )
+            ]
+        )
+    )
+        line_bot_api.reply_message(event.reply_token,Confirm_template)		
 	
 if __name__ == "__main__":
 	app.run()
