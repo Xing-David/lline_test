@@ -52,14 +52,15 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 	if event.message.text == "11":
-		line_bot_api.reply_message(	event.reply_token,TextSendMessage(text='\n接收 : '+forShow(event) ))
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text='\n接收 : '+forShow(event) ))
 	elif event.message.text == "12":
 		line_bot_api.reply_message(event.reply_token,StickerSendMessage(package_id=1, sticker_id=2))
 	elif event.message.text == "13":	
 		line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))
 	elif event.message.text == "14":
 		line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))		
-	# elif event.message.text == "15":
+	elif event.message.text == "15":		
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text=movie()))	
 		
 if __name__ == "__main__":
 	app.run()
