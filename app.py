@@ -64,7 +64,6 @@ def handle_message(event):
 if __name__ == "__main__":
 	app.run()
 
-
 def forShow(tex ):	
 	shoow =  '\ntext : ' + str( tex.message.text)+'\nid : '+str( tex.message.id) + '\ntype : ' +str( tex.message.type) 	
 	shoow = shoow + '\nsource_type : ' + str( tex.source.type)  
