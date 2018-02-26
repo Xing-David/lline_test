@@ -9,6 +9,11 @@
 
 import os
 import requests
+
+import sys
+import datetime
+import gspread
+
 from flask import Flask, request, abort
 
 from linebot import (
@@ -22,9 +27,8 @@ from linebot.exceptions import (
 # )
 from linebot.models import *
 
-from bs4 import BeautifulSoup
-from urllib.request import urlretrieve
-import random
+
+from oauth2client.service_account import ServiceAccountCredentials as SAC
 
 
 app = Flask(__name__)
