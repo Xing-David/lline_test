@@ -7,8 +7,6 @@
 @software: PyCharm  @since:python 3.6.0 on 2017/7/13
 """
 
-import os
-import requests
 from flask import Flask, request, abort
 
 from linebot import (
@@ -17,10 +15,18 @@ from linebot import (
 from linebot.exceptions import (
     InvalidSignatureError
 )
-# from linebot.models import (
-    # MessageEvent, TextMessage, TextSendMessage,
-# )
 from linebot.models import *
+
+import requests 
+from bs4 import BeautifulSoup
+from urllib.request import urlretrieve
+import random
+
+
+import sys
+import datetime
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials as SAC
 
 
 
