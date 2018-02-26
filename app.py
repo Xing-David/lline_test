@@ -57,10 +57,13 @@ def handle_message(event):
 	elif event.message.text == "12":
 		line_bot_api.reply_message(event.reply_token,StickerSendMessage(package_id=1, sticker_id=2))
 	elif event.message.text == "13":	
-		line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://ithelp.ithome.com.tw/upload/images/20171231/2010714402Vx4s5hOW.png', preview_image_url='https://ithelp.ithome.com.tw/upload/images/20171231/2010714402Vx4s5hOW.png'))
+		line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://adpic.pchome.com.tw/adpics/pic_1137534_667488.png', preview_image_url='https://adpic.pchome.com.tw/adpics/pic_1137534_667488.png'))
 	elif event.message.text == "14":
 		line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))		
-
+	elif event.message.text == "15":	# "音訊":
+		line_bot_api.reply_message(event.reply_token,AudioSendMessage(original_content_url='http://hao.1015600.com/upload/ring/000/993/d915a1c149bb3076a32dfdab923f8c21.mp3	', duration=100000))
+	
+		
 if __name__ == "__main__":
 	app.run()
 
