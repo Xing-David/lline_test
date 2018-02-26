@@ -64,21 +64,25 @@ def sum(tex ):
 	while i <= 100:
 		sum += i
 		i += 1
-	
-	if (tex.find('1'))!=-1:
+	sun = '特殊'
+	if (tex.find('A1'))!=-1:
 		sun = '\nreplyToken : ' + str( tex.replyToken)
-	elif (tex.find('2'))!=-1:
+	elif (tex.find('A2'))!=-1:
 		sun = '\ntype : '+str( tex.type)
-	elif (tex.find('3'))!=-1:	
+	elif (tex.find('A3'))!=-1:	
 		sun = '\ntimestamp : ' +str( tex.timestamp)
-	elif (tex.find('4'))!=-1:	
+	elif (tex.find('A4'))!=-1:	
 		sun = '\nsource_userId : ' + str( tex.source.userId)	
-	elif (tex.find('5'))!=-1:	
-		sun = '\nOK'
-	elif (tex.find('6'))!=-1:	
+	elif (tex.find('A5'))!=-1:	
+		sun = '\nGOGO'
+	elif (tex.find('A6'))!=-1:	
 		sun = showlog
-	elif (tex.find('7'))!=-1:	
-		sun = '\nOK'		
+	elif (tex.find('1'))!=-1:	
+		line_bot_api.reply_message(event.reply_token,StickerSendMessage(package_id=1, sticker_id=2))
+	elif (tex.find('1'))!=-1:	
+		line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://ithelp.ithome.com.tw/upload/images/20171231/2010714402Vx4s5hOW.png', preview_image_url='https://ithelp.ithome.com.tw/upload/images/20171231/2010714402Vx4s5hOW.png'))
+	elif (tex.find('1'))!=-1:
+		 line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4', preview_image_url='https://d1dwq032kyr03c.cloudfront.net/upload/images/20180103/20107144BJM2zuA9l7.png'))		
 	else:
 		sun = str(sum/50) + '太陽\uDBC0\uDCA9'	+'\t熊\uDBC0\uDC84'
 		showlog = sun + 'CC'
